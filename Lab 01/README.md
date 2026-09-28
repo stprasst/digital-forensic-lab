@@ -244,6 +244,7 @@ These files support the guided exercises in the working paper (Section 3):
 ## Course materials
 
 - `Lab 01 Presentation - Introduction to Digital Forensics.pptx` (also as PDF) — the lecture deck
+- `Lab 01 Deep Dive - find, Pipelines and Worked Examples.pptx` (also as `Lab 01 Deep Dive.pdf`) — companion deck: `find` operators (`-o`, `-mmin` vs `-mtime`, `-newermt`), how pipelines work, a forensic option pack for every command in the lab (`ls`, `cat`, `strings`, `grep`, `find`, hashing, `xxd`/`hexedit`, `ps`/`netstat`, plus `awk`/`sort`/`uniq`), and worked examples for the guided drills and Challenge A. Challenge B and C are left unsolved on purpose.
 - `Lab 01 Working Paper - Introduction to Digital Forensics.docx` (also as PDF) — the worksheet students fill in and submit
 
 Slides and working papers for Labs 2-7 will follow the same format.
