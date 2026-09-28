@@ -1,0 +1,8 @@
+# Evidence files must stay byte-exact — no line-ending conversion
+*.log -text
+*.bin -text
+*.evtx -text
+*.pcapng -text
+*.dat -text
+*.dd -text
+evidence_*.txt -text
