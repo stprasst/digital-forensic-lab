@@ -347,3 +347,21 @@ In audio steganography, the most common method is to embed the message within th
 3. Provided with the audio file from the Audio Steganography section, figure out how you can view the spectogram and recover the flag using Audacity. Submit a screenshot.
 
     The audio file can be downloaded from [https://github.com/stprasst/digital-forensic-lab/blob/main/Lab 03/files/super_secret_audio.wav](https://github.com/stprasst/digital-forensic-lab/blob/main/Lab%2003/files/super_secret_audio.wav).
+
+4. **Challenge B — the cover letter.** A job application arrived at a small company, and HR swears it "looks completely clean" on screen. Take [cover_letter.docx](files/cover_letter.docx) apart as the ZIP it secretly is: the document XML, the properties, and the relationships each tell a different story than the visible letter. Recover the staging URL, the drop instructions, the auth token, and explain the one relationship that phones home. Flag format `ctf{xxxx}`.
+
+5. **Challenge C — the harbor photo.** A "stock archive" [harbor_photo.png](files/harbor_photo.png) was attached to a shipping schedule email, and its metadata says "no copyright, nothing here". Run the plane grammar over it, recover the smuggling note hiding in the least significant bits, and take the flag. Flag format `ctf{xxxx}`.
+
+---
+
+# Course additions
+
+This repository extends the original lab with extra challenges and course materials. Questions 4-5 above are the course-added challenges; all course flags use the format `ctf{xxxx}` (the upstream exercises keep their original flag format).
+
+## Course materials
+
+- `Lab 03 Presentation - Document Analysis and Steganography.pptx` (also as PDF) — the lecture deck
+- `Lab 03 Deep Dive - OOXML, Macros and Steganography Workflows.pptx` (also as `Lab 03 Deep Dive.pdf`) — companion deck: OOXML unzip workflows, hidden text and external relationships, olevba output anatomy and obfuscation families, tool packs (exiftool, zsteg plane grammar, steghide, sox/Audacity), and the upstream case fully worked. Challenges B and C are left unsolved on purpose.
+- `Lab 03 Working Paper - Document Analysis and Steganography.docx` (also as PDF) — the worksheet students fill in and submit: pre-lab check, guided drills, challenges with staged hints, analysis questions, reflection, and appendices (cheat sheet, evidence log with a model exhibit, hash form, glossary)
+
+> Instructors: answer references live in `Lab 03/instructor/` — do not distribute that folder to students.

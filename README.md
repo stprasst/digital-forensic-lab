@@ -10,7 +10,7 @@ All flags use the format `ctf{xxxx}`.
 | --- | --- | --- |
 | [Lab 01](Lab%2001/) | Introduction to Digital Forensics — Linux CLI, hashing, magic bytes | Slides + working paper + 3 challenges |
 | [Lab 02](Lab%2002/) | Common Windows Artifacts — registry, LNK, browsers, event logs | Slides + deep dive + working paper + 2 new challenges |
-| [Lab 03](Lab%2003/) | Document Analysis and Steganography — OOXML, macros, stego | Upstream material |
+| [Lab 03](Lab%2003/) | Document Analysis and Steganography — OOXML, macros, stego | Slides + deep dive + working paper + 2 new challenges |
 | [Lab 04](Lab%2004/) | Web Attack Forensics — Apache/ModSecurity logs | Upstream material |
 | [Lab 05](Lab%2005/) | Network Traffic Forensics — Wireshark | Upstream material |
 | [Lab 06](Lab%2006/) | Disk Image Forensics — FTK Imager, `$MFT` | Upstream material |
