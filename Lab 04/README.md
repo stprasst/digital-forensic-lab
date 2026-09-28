@@ -306,3 +306,21 @@ Hint: The secret you're looking for is not in a `.sql` or a `.php` file.
 10. Based on this attack, what indicators of compromise can be used to detect future attacks?
 
 The logs can be downloaded from [https://github.com/stprasst/digital-forensic-lab/tree/main/Lab%2004/files/logs.zip](https://github.com/stprasst/digital-forensic-lab/tree/main/Lab%2004/files/logs.zip).
+
+11. **Challenge B — the shop traffic.** [traffic_shop.log](files/traffic_shop.log) holds 1,488 lines of access log from a small online shop, and one actor has a busy morning. Rank the IPs, catch the automated scanner by its user agent and its 404 burst, read the boolean probe pair and the two UNION dumps, then decode the 08:04 "goodbye" query — carefully, and more than once. Flag format `ctf{xxxx}`.
+
+12. **Challenge C — the WAF night shift.** [waf_alert.log](files/waf_alert.log) contains four ModSecurity audit transactions from a second server. Map the lettered sections, decide which transaction actually exfiltrated data (the E-section settles it), name every CRS rule ID that fired, and explain why the firewall watched everything and stopped nothing. Flag format `ctf{xxxx}`.
+
+---
+
+# Course additions
+
+This repository extends the original lab with extra challenges and course materials. Questions 11-12 above are the course-added challenges; all course flags use the format `ctf{xxxx}` (the upstream exercises keep their original flag format).
+
+## Course materials
+
+- `Lab 04 Presentation - Web Attack Forensics.pptx` (also as PDF) — the lecture deck
+- `Lab 04 Deep Dive - Apache, ModSecurity and Log Triage Workflows.pptx` (also as `Lab 04 Deep Dive.pdf`) — companion deck: log-triage one-liners, audit-transaction correlation, CRS rule IDs and anomaly scoring, decode chains (URL, double-URL, base64, SQL char()), and the upstream breach case fully worked. Challenges B and C are left unsolved on purpose.
+- `Lab 04 Working Paper - Web Attack Forensics.docx` (also as PDF) — the worksheet students fill in and submit: pre-lab check, guided drills, challenges with staged hints, analysis questions, reflection, and appendices (cheat sheet, evidence log with a model exhibit, hash form, glossary)
+
+> Instructors: answer references live in `Lab 04/instructor/` — do not distribute that folder to students.

