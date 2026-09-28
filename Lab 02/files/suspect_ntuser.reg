@@ -1,0 +1,44 @@
+Windows Registry Editor Version 5.00
+
+; NTUSER.DAT export - user: w  (case 2026-1042, insider-suspect workstation)
+; Collected 2026-09-22 08:30 by SOC
+
+[HKEY_CURRENT_USER\Control Panel\Mouse]
+"ActiveWindowTracking"="0"
+"Beep"="No"
+"DoubleClickHeight"="4"
+"DoubleClickSpeed"="400"
+"DoubleClickWidth"="4"
+"MouseHoverTime"="400"
+"MouseSensitivity"="10"
+"SwapMouseButtons"="0"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths]
+"url1"="\\NAS-Audit\2026\september"
+"url2"="C:\Users\w\Desktop"
+"url3"="\\NAS-Audit\2026"
+"url4"="D:\personal"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\MountPoints2]
+"C:\"="##?_Volume{7a8c1e23-4b9d-4c2a-9f10-52e1a6b3c001}\"
+"D:\"="##?_Volume{2d4f0a91-8c33-47e7-b6d2-90fe3c7a4b12}\"
+"##?_USBSTOR#Disk&Ven_Kingston&Prod_DataTraveler_3.0#001CC0EC41A8B7F3021B&0#{53f5630d-b6bf-11d0-94f2-00a0c91efb8b}"=hex:01
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{CEBFF5CD-ACE2-4F4F-9178-9926F0E6BA2C}\Count]
+"HRER_PUERNQ_RKG_VZCBEG_NPGVIR_RKG_VZCBEG.rkr"=hex:94,00,00,00,00,00,00,00,04,00,00,00,08,00,00,00
+"HRZR_EHACNGUP:\\Jvaqbjf\\rkcybere.rkr"=hex:96,00,00,00,00,00,00,00,14,00,00,00,20,00,00,00
+"HRZR_EHACNGUP:\\Jvaqbjf\\flfgrz32\\pzq.rkr"=hex:98,00,00,00,00,00,00,00,06,00,00,00,0c,00,00,00
+"HRZR_EHACNGUP:\\Jvaqbjf\\flfgrz32\\JvaqbjfCbjreFuryy\\i1.0\\cbjrefuryy.rkr"=hex:9a,00,00,00,00,00,00,00,03,00,00,00,05,00,00,00
+"HRZR_EHACNGUP:\\Cebtenz Svyrf\Zbmvyyn Sversbk\\sversbk.rkr"=hex:9c,00,00,00,00,00,00,00,11,00,00,00,22,00,00,00
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run]
+"OneDrive"="\"C:\Users\w\AppData\Local\Microsoft\OneDrive\OneDrive.exe\" /background"
+"MicrosoftEdgeAutoLaunch_C8A64D2EF681E3E50136A28FC3C44893"="\"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe\" --no-startup-window --win-session-start /prefetch:5"
+"WindowsDefenderUpdate"="powershell.exe -WindowStyle Hidden -enc JABrACAAPQAgACcAYwB0AGYAewByAHUAbgBfAGsAMwB5AF8AcAAzAHIAcwAxAHMAdAAzAG4AYwAzAH0AJwA7ACAAVwByAGkAdABlAC0ATwB1AHQAcAB1AHQAIAAiAFAAZQByAHMAaQBzAHQAZQBuAGMAZQAgAGUAcwB0AGEAYgBsAGkAcwBoAGUAZAAuACAASwBlAHkAOgAgACQAawAiAA=="
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnce]
+"Uninstall Cleanup"="C:\Windows\System32\cleanup.exe"
+
+[HKEY_CURRENT_USER\Environment]
+"TEMP"=hex(2):25,55,53,45,52,50,52,4f,46,49,4c,45,25,5c,41,70,70,44,61,74,61,5c,4c,6f,63,61,6c,5c,54,65,6d,70,00
+"TMP"=hex(2):25,55,53,45,52,50,52,4f,46,49,4c,45,25,5c,41,70,70,44,61,74,61,5c,4c,6f,63,61,6c,5c,54,65,6d,70,00

@@ -255,3 +255,21 @@ Here’s an example of event ID `1117` in the file `Microsoft-Windows-Windows De
     2. Can you analyze the downloaded file and understand what’s the purpose of that file?
     
     The event logs file can be downloaded from [https://github.com/stprasst/digital-forensic-lab/blob/main/Lab 02/files/Microsoft-Windows-PowerShell%254Operational.evtx](https://github.com/stprasst/digital-forensic-lab/blob/main/Lab%2002/files/Microsoft-Windows-PowerShell%254Operational.evtx)
+
+4. **Challenge B — the exported hive.** The hive of an insider suspect was exported to [suspect_ntuser.reg](files/suspect_ntuser.reg) (plain text, so your Lab 01 skills apply). One of the three Run values is persistence wearing a legitimate-looking name: find it, decode the encoded command it runs at every logon, un-ROT13 the UserAssist trail, and identify the mounted USB device (vendor, model, serial). Flag format `ctf{xxxx}`.
+
+5. **Challenge C — the history hunt.** [places.sqlite](files/places.sqlite) holds 310 rows of browsing history with one suspicious evening (20 September 2026). Rank the domains, convert PRTime, rebuild the evening as a timeline, and decode the one search that should never have been made. Flag format `ctf{xxxx}`.
+
+---
+
+# Course additions
+
+This repository extends the original lab with extra challenges and course materials. Questions 4-5 above are the course-added challenges; all course flags use the format `ctf{xxxx}` (the upstream exercises keep their original flag format).
+
+## Course materials
+
+- `Lab 02 Presentation - Common Windows Artifacts.pptx` (also as PDF) — the lecture deck
+- `Lab 02 Deep Dive - Registry, SQLite and Event Log Workflows.pptx` (also as `Lab 02 Deep Dive.pdf`) — companion deck: registry hot spots, UserAssist ROT13, a SQLite crash course (SELECT, WHERE, aggregates, PRTime), the console tool pack (reg.exe, Get-WinEvent, wevtutil, LECmd, firefox_decrypt), and the upstream case fully worked. Challenges B and C are left unsolved on purpose.
+- `Lab 02 Working Paper - Common Windows Artifacts.docx` (also as PDF) — the worksheet students fill in and submit: pre-lab check, guided drills, challenges with staged hints, analysis questions, reflection, and appendices (cheat sheet, evidence log with a model exhibit, hash form, glossary)
+
+> Instructors: answer references live in `Lab 02/instructor/` — do not distribute that folder to students.
