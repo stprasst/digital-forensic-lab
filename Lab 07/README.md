@@ -252,3 +252,23 @@ It is suspected that the leader was using Windows 7 at the time, and had been hi
 The secret information you are looking for is in the form of a flag with the format `flag{xxxx}`, where `xxxx` represents a set of alphanumeric characters that make up the flag. There are a total of 4 flags that you need to find. Good luck!
 
 The memory dump can be downloaded from [https://drive.google.com/file/d/1tu8Z-vxUl2khnB2jUtew-A9qTSlqnrTr/view?usp=sharing](https://drive.google.com/file/d/1tu8Z-vxUl2khnB2jUtew-A9qTSlqnrTr/view?usp=sharing).
+
+## Course-Added Challenges
+
+1. **Challenge B — the triage export.** [triage_output.txt](files/triage_output.txt) is a Volatility export salvaged from a case whose full dump was lost to an imaging fault. It still holds five sections: pslist, pstree, cmdline, netscan, and consoles. Find the process that does not belong, decode what its child downloaded, name both C2 endpoints, and read what the user typed at the end. Flag format `ctf{xxxx}`.
+
+2. **Challenge C — the strings hunt.** [mem_strings.bin](files/mem_strings.bin) is a raw blob of memory-like bytes with four artifact types inside: clipboard-like text, a search URL, a note, and a console log. Three decoys and one true flag - and the true one will not show itself to plain ASCII `strings`. Use every decoder the series taught you. Flag format `ctf{xxxx}`.
+
+---
+
+# Course additions
+
+This repository extends the original lab with extra challenges and course materials. The two course-added challenges above use the format `ctf{xxxx}` (the upstream exercise keeps its original `flag{xxxx}` format, and its dump remains the Google Drive download linked above).
+
+## Course materials
+
+- `Lab 07 Presentation - Memory Forensics.pptx` (also as PDF) — the lecture deck
+- `Lab 07 Deep Dive - Volatility Workflows and the Four Hiding Places.pptx` (also as `Lab 07 Deep Dive.pdf`) — companion deck: the exact plugin command for each of the four hiding places (illustrative outputs), the correlation drill, a Challenge A command card, and the four-lab series retrospective. Challenges B and C are left unsolved on purpose.
+- `Lab 07 Working Paper - Memory Forensics.docx` (also as PDF) — the worksheet students fill in and submit: pre-lab check, guided drills, challenges with staged hints, analysis questions, a series-closing reflection, and appendices (cheat sheet, evidence log with a model exhibit, hash form, glossary)
+
+> Instructors: answer references live in `Lab 07/instructor/` — do not distribute that folder to students.

