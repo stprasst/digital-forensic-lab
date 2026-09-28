@@ -134,3 +134,21 @@ The organization that previously hired you to investigate the web attack has rea
 10. What information was transmitted through the attacker's covertly established channel of communication?
 
 The traffic capture file can be downloaded from [https://github.com/stprasst/digital-forensic-lab/blob/main/Lab 05/files/challenge.pcapng](https://github.com/stprasst/digital-forensic-lab/blob/main/Lab%2005/files/challenge.pcapng).
+
+11. **Challenge B — office hours.** [office_hours.pcap](files/office_hours.pcap) is a small capture from an internal network: one server, two clients, and a login form that eventually says yes. Find the credentials in the clear, recover the file that was downloaded (Export Objects or the stream), and decode the handover token stored inside it. Flag format `ctf{xxxx}`.
+
+12. **Challenge C — the ping puzzle.** [ping_puzzle.pcap](files/ping_puzzle.pcap) contains 112 packets of pure ICMP between two hosts. Most payloads are the standard padding — most of them. Filter to echo requests, spot the payloads that are not, reassemble them in order, and decode the message the pings are quietly carrying. Flag format `ctf{xxxx}`.
+
+---
+
+# Course additions
+
+This repository extends the original lab with extra challenges and course materials. Questions 11-12 above are the course-added challenges; all course flags use the format `ctf{xxxx}` (the upstream exercises keep their original flag format).
+
+## Course materials
+
+- `Lab 05 Presentation - Network Traffic Forensics.pptx` (also as PDF) — the lecture deck
+- `Lab 05 Deep Dive - Wireshark, Streams and Covert Channel Workflows.pptx` (also as `Lab 05 Deep Dive.pdf`) — companion deck: the 60-second orientation workflow, stream-centric analysis with tcp.stream citations, a tshark one-liner pack, layered payload decoding (URL, hex, XOR), and the upstream breach capture fully worked. Challenges B and C are left unsolved on purpose.
+- `Lab 05 Working Paper - Network Traffic Forensics.docx` (also as PDF) — the worksheet students fill in and submit: pre-lab check, guided drills, challenges with staged hints, analysis questions, reflection, and appendices (cheat sheet, evidence log with a model exhibit, hash form, glossary)
+
+> Instructors: answer references live in `Lab 05/instructor/` — do not distribute that folder to students.
