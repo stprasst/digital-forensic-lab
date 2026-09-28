@@ -1,0 +1,5 @@
+CASE 1042 - EVIDENCE SNAPSHOT
+Item: USB drive seized 2026-01-10 09:30
+Acquired by: lab technician
+Image: usb_image.dd (4 GB)
+Notes: delivered to forensics lab, sealed. 

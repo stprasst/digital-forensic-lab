@@ -1,0 +1,7 @@
+# Instructor-only materials — never distribute to students
+Lab 01/instructor/
+
+# OS / tool noise
+.DS_Store
+Thumbs.db
+.mimosa/
