@@ -13,7 +13,7 @@ All flags use the format `ctf{xxxx}`.
 | [Lab 03](Lab%2003/) | Document Analysis and Steganography — OOXML, macros, stego | Slides + deep dive + working paper + 2 new challenges |
 | [Lab 04](Lab%2004/) | Web Attack Forensics — Apache/ModSecurity logs | Slides + deep dive + working paper + 2 new challenges |
 | [Lab 05](Lab%2005/) | Network Traffic Forensics — Wireshark | Slides + deep dive + working paper + 2 new challenges |
-| [Lab 06](Lab%2006/) | Disk Image Forensics — FTK Imager, `$MFT` | Upstream material |
+| [Lab 06](Lab%2006/) | Disk Image Forensics — FTK Imager, `$MFT` | Slides + deep dive + working paper + 2 new challenges |
 | [Lab 07](Lab%2007/) | Memory Forensics — Volatility | Upstream material |
 
 Slides and working papers for Labs 2-7 follow the Lab 01 format as they are developed.

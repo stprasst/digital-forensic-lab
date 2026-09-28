@@ -99,3 +99,21 @@ Utilize the disk image from the section [Analyzing a Disk Image](#analyzing-a-di
 3. Can you determine the parent directory of the file named `$Txf`? You can use either analyzeMFT or MFTECmd to inspect the contents of the `$MFT` file to answer this question.
 4. The `meme.jpeg` image was originally downloaded from a twitter URL. Can you use MFTECmd to determine the original URL? 
 5. Can you analyze the `$Boot` file and determine the volume serial number in raw hexadecimal format?
+
+6. **Challenge B — the shipping office's stick.** [suspect_card.dd](files/suspect_card.dd) is a raw FAT16 image of a USB drive from a shipping office. The root folder holds a README, meeting minutes, and routes - plus one entry whose first byte is `0xE5`. Its FAT chain is gone, but the bytes it pointed at are still in the data area. Recover the deleted plan and take its flag. Flag format `ctf{xxxx}`.
+
+7. **Challenge C — the sixteen records.** [mini_mft.bin](files/mini_mft.bin) contains sixteen crafted `$MFT`-style records. Rebuild the directory tree from the parent references, put every file's two clocks side by side (`$STANDARD_INFORMATION` vs `$FILE_NAME`), find the record that disagrees with itself - and read what its resident `$DATA` confesses. Flag format `ctf{xxxx}`.
+
+---
+
+# Course additions
+
+This repository extends the original lab with extra challenges and course materials. Questions 6-7 above are the course-added challenges; all course flags use the format `ctf{xxxx}` (the upstream exercises keep their original format; Challenge A has no flag - its artifact answers are the result).
+
+## Course materials
+
+- `Lab 06 Presentation - Disk Image Forensics.pptx` (also as PDF) — the lecture deck
+- `Lab 06 Deep Dive - MFT, Deleted Files and Timestamp Workflows.pptx` (also as `Lab 06 Deep Dive.pdf`) — companion deck: walking the AD1 in FTK, the $MFT record layout in hex, MFTECmd workflows, the two-clock timestomping method, and the upstream image's five answers fully worked. Challenges B and C are left unsolved on purpose.
+- `Lab 06 Working Paper - Disk Image Forensics.docx` (also as PDF) — the worksheet students fill in and submit: pre-lab check, guided drills, challenges with staged hints, analysis questions, reflection, and appendices (cheat sheet, evidence log with a model exhibit, hash form, glossary)
+
+> Instructors: answer references live in `Lab 06/instructor/` — do not distribute that folder to students.
